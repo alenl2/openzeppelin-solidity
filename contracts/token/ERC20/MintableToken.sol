@@ -23,7 +23,7 @@ contract MintableToken is StandardToken, Ownable {
   }
 
   modifier hasMintPermission() {
-    require(msg.sender == owner);
+    require(isOwner(msg.sender));
     _;
   }
 
